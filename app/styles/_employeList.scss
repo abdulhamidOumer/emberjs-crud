@@ -1,0 +1,59 @@
+.employees-container {
+  margin-top: 5rem;
+}
+
+.employees-table {
+  width: 80%;
+  margin-left: 10%;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  padding: 1rem;
+
+  @include mobiles {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  &__headers {
+    background: $primary-color;
+    color: $color-accent;
+
+    &__row {
+      padding: 0.5rem;
+    }
+  }
+
+  &__items {
+    text-align: left;
+    background: $row-color;
+    &:nth-child(odd) {
+      background: $primary-color__lighter;
+    }
+
+    &:hover {
+      background-color: $primary-color__light;
+    }
+
+    &__row {
+      padding: 1.2rem 1rem;
+      color: $text-color;
+      font-size: 14px;
+
+      &__action {
+        text-align: center;
+        justify-content: space-evenly;
+
+        &__edit {
+          color: $color-success;
+          cursor: pointer;
+        }
+
+        &__delete {
+          color: $color-danger;
+          margin-left: 1rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

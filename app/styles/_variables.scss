@@ -1,0 +1,61 @@
+@function getJustify($arg) {
+  $justify: (
+    "sa": space-around,
+    "sb": space-between,
+    "se": space-evenly,
+    "c": center,
+    "fs": flex-start,
+    "fe": flex-end,
+  );
+
+  @return map-get($justify, $arg);
+}
+
+@function checkAlign($arg) {
+  $align: (
+    "b": baseline,
+    "s": stretch,
+    "c": center,
+    "fs": flex-start,
+    "fe": flex-end,
+  );
+
+  @return map-get($align, $arg);
+}
+
+@function get-font-weight($weight) {
+  $font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700,
+  );
+  @return map-get($font-weights, $weight);
+}
+
+@mixin flex-box() {
+  display: flex;
+  @content;
+}
+
+//device widths
+$desktop-min-width: 980px;
+$tablet-max-width: 978px;
+$mobile-max-width: 650px;
+
+@mixin desktops() {
+  @media screen and (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin tablets() {
+  @media screen and (max-width: $tablet-max-width) {
+    @content;
+  }
+}
+
+@mixin mobiles() {
+  @media screen and (max-width: $mobile-max-width) {
+    @content;
+  }
+}

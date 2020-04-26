@@ -1,0 +1,25 @@
+<div class="info-form">
+    <LoadingIndicator @rounded={{true}} @visible={{this.disabled}}/>
+    {{#if @currentEmployee.id }}
+        <h3 class="info-form__title">Edit {{@currentEmployee.first_name}}'s Information</h3>
+    {{else}}
+        <h3 class="info-form__title">Add New Employee</h3>
+    {{/if}}
+    
+    <form onsubmit="return false;" {{on 'submit' (fn this.addEmployee @getEmployees @toogleModal @currentEmployee) }}>
+        <label class="info-form__label">First Name</label><br>
+        {{input required="true" name="first_name" class="info-form__input" placeholder="Employee First Name" value=@currentEmployee.first_name}}
+        
+        <br><label class="info-form__label">Last Name</label><br>
+        {{input required="true"  name="last_name" class="info-form__input" placeholder="Employee Last Name" value=@currentEmployee.last_name}}
+    
+        <br><label class="info-form__label">Email</label><br>
+        {{input required="true"  name="email" class="info-form__input" placeholder="Employee Email" value=@currentEmployee.email}}
+
+        <div class="info-form__footer">
+            <input {{on 'click' @toogleModal}} class="info-form__footer__buttons cancel" type="reset" value="cancel" disabled={{this.disabled}}/>
+            <input type="submit"  class={{if this.disabled "info-form__footer__buttons submit disabled" "info-form__footer__buttons submit"}} disabled={{this.disabled}} />
+        </div>
+
+    </form>
+</div>

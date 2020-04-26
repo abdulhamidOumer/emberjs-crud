@@ -1,0 +1,55 @@
+.info-form {
+  &__title {
+    color: $color-accent;
+    padding: 1rem 0;
+    background: $primary-color;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  &__input {
+    width: 70%;
+    height: 2rem;
+    padding: 0.5rem;
+    border: 1px solid $primary-color;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+  }
+
+  &__label {
+    position: absolute;
+    left: 0;
+    margin-left: 14%;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: $text-color;
+  }
+
+  &__footer {
+    &__buttons {
+      border: none;
+      color: $color-accent;
+      font-weight: get-font-weight(bold);
+      padding: 1rem 3rem;
+      margin-right: 1rem;
+      cursor: pointer;
+
+      &.submit {
+        background: $color-success;
+        &:hover {
+          background: $color-success__dark;
+        }
+
+        &.disabled {
+          cursor: not-allowed;
+          background: $color-success__light;
+        }
+      }
+      &.cancel {
+        background: $color-danger;
+        &:hover {
+          background: $color-danger__dark;
+        }
+      }
+    }
+  }
+}

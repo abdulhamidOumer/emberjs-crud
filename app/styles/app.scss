@@ -1,0 +1,23 @@
+@import "./variables";
+@import "./theme";
+@import "./header";
+@import "./customModal";
+@import "./_infoForm";
+@import "./actionButton";
+@import "./employeList";
+@import "./avatarContainer";
+@import "./loadingIndicator";
+
+.html,
+body {
+  font-family: $default-font-family;
+  font-size: $default-font-size;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+}

@@ -1,0 +1,32 @@
+.action-button {
+  display: flex;
+  position: fixed;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  background-color: $primary-color;
+  color: $color-accent;
+  width: 150px;
+  justify-content: space-evenly;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  box-shadow: $default-box-shadow;
+  bottom: 40px;
+  right: 40px;
+  text-decoration: none;
+  font-weight: get-font-weight(medium);
+  cursor: pointer;
+
+  &:hover {
+    background: $primary-color__dark;
+  }
+
+  &__icon {
+    font-size: 1.3rem;
+  }
+}
+
+.man {
+  background: red;
+}

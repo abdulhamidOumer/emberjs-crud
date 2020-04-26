@@ -1,0 +1,32 @@
+<LoadingIndicator @visible={{this.gettingEmployees}} />
+<div {{did-insert this.getEmployees}} class="employees-container">    
+    <table  class="employees-table">
+        <tr class="employees-table__headers">
+            <th class="employees-table__headers__row__action"></th>
+            <th class="employees-table__headers__row">First Name</th>
+            <th class="employees-table__headers__row">Last Name</th>
+            <th class="employees-table__headers__row">Email</th>
+            <th class="employees-table__headers__row"></th>
+        </tr>
+        {{#each this.data as |data|}}
+            <tr class="employees-table__items"> 
+                <td class="employees-table__items__row__action">
+                    <AvatarHolder @src={{if data.avatar data.avatar (concat this.defaultAvatar '&name=' data.first_name "+" data.last_name)}} @alt="A"/>
+                </td>
+                <td class="employees-table__items__row">{{data.first_name}}</td>
+                <td class="employees-table__items__row">{{data.last_name}}</td>
+                <td class="employees-table__items__row">{{data.email}}</td>
+                <td class="employees-table__items__row__action">
+                    <FaIcon {{on 'click' (fn this.openEdit data) }} class="employees-table__items__row__action__edit" @icon="edit" />
+                    <FaIcon {{on 'click' (fn this.deleteEmployee data) }} class="employees-table__items__row__action__delete" @icon="trash-alt"/>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+
+    <CustomModal @toogleModal={{this.closeModal}} @className={{this.className}}>
+        <InfoForm @currentEmployee={{this.currentEmployee}} @toogleModal={{this.toogleModal}} @getEmployees={{this.getEmployees}} />
+    </CustomModal>
+
+    <ActionButton @toogleModal={{this.toogleModal}} />
+</div>

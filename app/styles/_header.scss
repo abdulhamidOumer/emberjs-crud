@@ -1,0 +1,20 @@
+.top-bar {
+  display: flex;
+  background: $color-accent;
+  color: $primary-color;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 0 1rem;
+  box-shadow: $default-box-shadow;
+
+  &__title {
+    margin-left: 1rem;
+  }
+
+  &__icon {
+    font-size: 2rem;
+  }
+}

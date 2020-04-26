@@ -1,0 +1,14 @@
+.avatar-container {
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.1rem;
+  border-radius: 50%;
+  border: 2px solid $primary-color;
+  margin: auto;
+
+  & img {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+  }
+}
